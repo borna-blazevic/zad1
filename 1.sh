@@ -1,9 +1,12 @@
 #!/bin/bash
-
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 if [ "$1" == "suspend" ]; then
-    sleep 1h && systemctl suspend -i
+   sudo sleep 1h && systemctl suspend -i
 elif [ "$1" == "hibernate" ]; then
-    sleep 1h && systemctl hibernate -i
+   sudo sleep 1h && systemctl hibernate -i
 else
     echo "Function call should look like ./1.sh [suspend/hibernate]"
     exit 1
