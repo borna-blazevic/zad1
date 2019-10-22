@@ -19,3 +19,6 @@ fi
 # -i --ignore-inhibitors             When shutting down or sleeping, ignore inhibitors
 
 #Usage: sleep NUMBER[SUFFIX]...
+
+
+#The $EUID environment variable holds the current user's UID. Root's UID is 0. 
